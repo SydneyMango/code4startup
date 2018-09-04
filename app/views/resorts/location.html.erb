@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'resort_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        Location
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= simple_form_for @resort do |f| %>
+
+            <div class="row">
+              <div class="form-group">
+                <%= f.input :address, class: "form-control", id: "autoaddress" %>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit "Save", class: "btn btn-form" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

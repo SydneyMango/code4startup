@@ -10,18 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_041554) do
+ActiveRecord::Schema.define(version: 2018_08_31_042914) do
+
+  create_table "airports", force: :cascade do |t|
+    t.string "name"
+    t.string "airport_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resorts", force: :cascade do |t|
+    t.string "name"
+    t.string "region"
+    t.string "country"
+    t.string "address"
+    t.text "description"
+    t.string "website_url"
+    t.string "contact_url"
+    t.string "bookings_url"
+    t.integer "user_id"
+    t.integer "airport_id"
+    t.boolean "surfing"
+    t.boolean "eco_friendly"
+    t.boolean "yoga"
+    t.boolean "sup"
+    t.boolean "rock_climbing"
+    t.boolean "day_spa"
+    t.boolean "cycling"
+    t.boolean "mountain_biking"
+    t.boolean "diving"
+    t.boolean "snorkling"
+    t.boolean "hiking"
+    t.boolean "skiing"
+    t.boolean "snowboarding"
+    t.boolean "vegan"
+    t.boolean "vegetarian"
+    t.boolean "golfing"
+    t.boolean "gym"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["airport_id"], name: "index_resorts_on_airport_id"
+    t.index ["user_id"], name: "index_resorts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "provider"
+    t.string "uid"
+    t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "phone_number"
+    t.text "description"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

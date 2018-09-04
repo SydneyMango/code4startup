@@ -1,0 +1,2 @@
+module ResortHelper
+end

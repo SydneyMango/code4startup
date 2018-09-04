@@ -1,0 +1,74 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Create your Resort
+  </div>
+  <div class="panel-body">
+    <div class="container">
+
+      <%= simple_form_for @resort do |f| %>
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= f.input :name, class: "form-control" %>
+            </div>
+          </div>
+
+           <div class="col-md-4 select">
+            <div class="form-group">
+              <%= f.input :region, :collection => %w[Africa Asia Caribbean Central\ America Europe North\ America Oceania South\ America], class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <%= f.label :country %><br />
+              <%= f.country_select :country, class: "form-control" %>
+            </div>
+          </div>
+
+           <div class="col-md-4">
+            <div class="form-group">
+              <%= f.input :address, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= f.input :website_url, class: "form-control" %>
+            </div>
+          </div>
+
+           <div class="col-md-4">
+            <div class="form-group">
+              <%= f.input :description, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <%= f.label :airport %><br />
+              <%= f.collection_select :airport_id, Airport.all, :id, :name, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div><%= f.submit "Create My Resort", class: "btn btn-normal" %></div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'resort_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        Features
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @resort do |f| %>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :eco_friendly %> Eco-friendly
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :vegetarian %> Vegetarian
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :vegan %> Vegan
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :surfing %> Surfing
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :yoga %> Yoga
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :sup %> SUP
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :mountain_biking %> Mountain biking
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :diving %> Diving
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :snorkling %> Snorkling
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :hiking %> Hiking
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :skiing %> Skiing
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :snowboarding %> Snowboarding
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :golfing %> Golfing
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :gym %> Gym
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :rock_climbing %> Rock climbing
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-4">
+                <%= f.check_box :day_spa %> Day spa
+              </div>
+              <div class="col-md-4">
+                <%= f.check_box :cycling %> Cycling
+              </div>
+            </div>
+
+            <br/><br/>
+
+            <div class="text-center">
+              <%= f.submit "Save", class: "btn btn-form" %>
+            </div>
+
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  continent: MyString
+  country: MyString
+  address: MyString
+  description: MyText
+  website_url: MyString
+  contact_url: MyString
+  bookings_url: MyString
+  user: one
+  airport: one
+  surfing: false
+  eco-friendly: false
+  yoga: false
+  sup: false
+  rock-climbing: false
+  day-spa: false
+  cycling: false
+  mountain-biking: false
+  diving: false
+  snorkling: false
+  hiking: false
+  skiing: false
+  snowboarding: false
+  vegan: false
+  vegetarian: false
+  golfing: false
+  gym: false
+
+two:
+  name: MyString
+  continent: MyString
+  country: MyString
+  address: MyString
+  description: MyText
+  website_url: MyString
+  contact_url: MyString
+  bookings_url: MyString
+  user: two
+  airport: two
+  surfing: false
+  eco-friendly: false
+  yoga: false
+  sup: false
+  rock-climbing: false
+  day-spa: false
+  cycling: false
+  mountain-biking: false
+  diving: false
+  snorkling: false
+  hiking: false
+  skiing: false
+  snowboarding: false
+  vegan: false
+  vegetarian: false
+  golfing: false
+  gym: false
