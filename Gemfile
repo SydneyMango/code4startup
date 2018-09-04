@@ -22,6 +22,8 @@ gem 'omniauth-facebook'
 gem 'countries'
 gem 'country_select', '~> 3.1'
 gem 'simple_form'
+gem 'paperclip', '~> 6.0.0'
+gem 'aws-sdk-s3', '~> 1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

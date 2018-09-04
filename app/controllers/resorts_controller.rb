@@ -1,6 +1,7 @@
 class ResortsController < ApplicationController
   before_action :set_resort, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+  before_action :is_authorised, only: [:listing, :description, :photo_upload, :features, :location, :update]
 
   def index
     @resorts=current_user.resorts
@@ -30,6 +31,7 @@ class ResortsController < ApplicationController
   end
 
   def photo_upload
+    @photos = @resort.photos
   end
 
   def features
@@ -56,5 +58,10 @@ class ResortsController < ApplicationController
   def resort_params
       params.require(:resort).permit(:name, :region, :airport_id, :user_id, :country, :address, :description, :website_url, :contact_url, :bookings_url, :surfing, :eco_friendly, :yoga, :sup, :rock_climbing, :day_spa, :cycling, :mountain_biking, :diving, :snorkling, :hiking, :skiing, :nowboarding, :vegan, :vegetarian, :golfing, :gym, :active)
   end
+
+  def is_authorised
+    redirect_to root_path, alert: "You don't have permission" unless current_user.id == @resort.user_id
+  end
+
 
 end

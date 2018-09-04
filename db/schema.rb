@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_042914) do
+ActiveRecord::Schema.define(version: 2018_09_04_013946) do
 
   create_table "airports", force: :cascade do |t|
     t.string "name"
     t.string "airport_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "resort_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["resort_id"], name: "index_photos_on_resort_id"
   end
 
   create_table "resorts", force: :cascade do |t|

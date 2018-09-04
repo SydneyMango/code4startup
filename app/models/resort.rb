@@ -1,6 +1,7 @@
 class Resort < ApplicationRecord
   belongs_to :user
   belongs_to :airport
+  has_many :photos
 
   validates :name, presence: true
   validates :region, presence: true
