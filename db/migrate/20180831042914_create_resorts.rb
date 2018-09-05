@@ -28,6 +28,7 @@ class CreateResorts < ActiveRecord::Migration[5.2]
       t.boolean :vegetarian
       t.boolean :golfing
       t.boolean :gym
+      t.boolean :active
 
       t.timestamps
     end

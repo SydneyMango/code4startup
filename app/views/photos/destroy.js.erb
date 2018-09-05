@@ -1,1 +1,10 @@
 $('#photos').html("<%= j render 'photos_list' %>")
+<% if @resort.photos.blank? %>
+  $('#photo_check').hide();
+<% end %>
+
+<% if !@resort.active && !@resort.name.blank? && !@resort.photos.blank? && !@resort.address.blank? %>
+  $('#publish_button').attr('disabled', false);
+<% else %>
+  $('#publish_button').attr('disabled', true);
+<% end %>

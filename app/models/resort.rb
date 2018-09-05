@@ -15,4 +15,12 @@ class Resort < ApplicationRecord
     country.translations[I18n.locale.to_s] || country.name
   end
 
+    def cover_photo(size)
+    if self.photos.length > 0
+      self.photos[0].image.url(size)
+    else
+      "blank.jpg"
+    end
+  end
+
 end

@@ -22,6 +22,7 @@ class ResortsController < ApplicationController
   end
 
   def show
+    @photos = @resort.photos
   end
 
   def listing
@@ -41,7 +42,11 @@ class ResortsController < ApplicationController
   end
 
   def update
-    if @resort.update(resort_params)
+
+    new_params = resort_params
+    new_params = resort_params.merge(active: true) if is_ready_resort
+
+    if @resort.update(new_params)
       flash[:notice] = "Saved..."
     else
       flash[:alert] = "Something went wrong..."
@@ -63,5 +68,11 @@ class ResortsController < ApplicationController
     redirect_to root_path, alert: "You don't have permission" unless current_user.id == @resort.user_id
   end
 
+  def is_ready_resort
+    if !@resort.active && !@resort.name.blank? && !@resort.photos.blank? && !@resort.address.blank?
+    end
+  end
 
 end
+
+

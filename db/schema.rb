@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2018_09_04_013946) do
     t.boolean "vegetarian"
     t.boolean "golfing"
     t.boolean "gym"
+    t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["airport_id"], name: "index_resorts_on_airport_id"
